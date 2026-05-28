@@ -1,0 +1,104 @@
+/* 🔄 專為高可讀性設計：基礎字體全面放大，行高舒適 */
+.detail-page { 
+  padding: 40px 5%; 
+  max-width: 1000px; 
+  margin: 40px auto; 
+  line-height: 1.8; 
+  font-size: 1.25rem; /* 基礎內文字體調整為 1.25rem (約 20px) */
+  color: #334155;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* 🔙 返回按鈕 */
+.back-btn {
+  display: inline-block;
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+.back-btn:hover { 
+  color: #0369a1; 
+  text-decoration: underline; 
+}
+
+/* 🏷️ 主標題 */
+h1 { 
+  color: #1e3a8a; 
+  border-bottom: 3px solid #0284c7; 
+  padding-bottom: 15px; 
+  font-size: 2.5rem; 
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.meta { 
+  font-size: 1rem; 
+  color: #64748b; 
+  margin-bottom: 40px; 
+}
+
+/* 📌 小節標題 */
+h3 {
+  font-size: 1.6rem; 
+  color: #0f172a;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 5px solid #38bdf8;
+  padding-left: 12px;
+}
+
+p { 
+  margin-bottom: 25px; 
+  text-align: justify; 
+}
+
+/* 📸 響應式科研成果圖片佔位框 */
+.image-container {
+  width: 100%;
+  margin: 35px 0;
+}
+.image-placeholder {
+  width: 100%;
+  height: 350px;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 1.15rem;
+  padding: 25px;
+  text-align: center;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* 📄 學術論文列表 */
+.paper-list {
+  list-style-type: square;
+  padding-left: 25px;
+  margin-bottom: 30px;
+}
+.paper-list li {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+  color: #1e293b;
+}
+.paper-list i {
+  color: #0f172a;
+  font-weight: 500;
+}
+.scholar-link {
+  display: inline-block;
+  color: #0284c7;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+.scholar-link:hover {
+  text-decoration: underline;
+}
