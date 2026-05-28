@@ -25,7 +25,7 @@
 
 <script setup>
 // 引入 assets 目录下的 PNG 格式 Logo
-import polyuLogo from '../assets/polyulogo.png'
+import polyuLogo from '../assets/Polyulogo.png'
 import lsgiLogo from '../assets/LSGI.png'
 </script>
 
