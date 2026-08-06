@@ -70,7 +70,7 @@ import { ref } from 'vue'
 import gg from '../assets/googlesc.png'
 // 假设当前 vue 文件在 src/components/，照片在 src/assets/focus/director.png
 import directorImg from '../assets/director.jpg'
-// 动态解析 assets/Staff/ 目录下图片的函数
+//  assets/Staff/ 目录下图片的函数
 const getStaffAvatar = (name) => {
   return new URL(`../assets/Staff/${name}`, import.meta.url).href
 }
