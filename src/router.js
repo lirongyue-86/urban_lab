@@ -3,23 +3,25 @@ import HomeView from './components/HomeView.vue'
 import TeamView from './components/TeamView.vue'
 
 // 💡 導入 6 個核心研究方向的詳細檢視組件
-import GeoAiView from './components/GeoAiView.vue'
-import TourismMobilityView from './components/TourismMobilityView.vue'
-import UrbanComputingView from './components/UrbanComputingView.vue'
-import SmartCityPlanningView from './components/SmartCityPlanningView.vue'
-import HumanBehaviorView from './components/HumanBehaviorView.vue'
-import UrbanPrivacyView from './components/UrbanPrivacyView.vue'
+import GeoAiView from './components/Geoai.vue'
+import TourismMobilityView from './components/MobileMapping.vue'
+import SmartCityPlanningView from './components/UrbanInformatics.vue'
+import UrbanPrivacyView from './components/IntelligentAnalytics.vue'
 
+import BookView from './components/book.vue'
+import PubView from './components/Pub.vue' // 💡 新增 Publications 頁面組件
+import OpeningView from  './components/Opening.vue' // 💡 新增 Opening 頁面組件
+// import Geoai from './components/Geoai.vue'
 const routes = [
   { path: '/', component: HomeView },
   { path: '/team', component: TeamView },
-  
+  { path: '/book', component: BookView }, 
+  { path: '/Pub', component: PubView }, // 💡 Publications 頁面路由
+  {path: '/opening', component: OpeningView}, // 💡 Opening 頁面路由
   // 🔄 6 個核心研究方向的獨立新網頁路由路徑
   { path: '/research/geo-ai', component: GeoAiView },
   { path: '/research/tourism-mobility', component: TourismMobilityView },
-  { path: '/research/urban-computing', component: UrbanComputingView },
   { path: '/research/smart-city-planning', component: SmartCityPlanningView },
-  { path: '/research/human-behavior', component: HumanBehaviorView },
   { path: '/research/urban-privacy', component: UrbanPrivacyView }
 ]
 

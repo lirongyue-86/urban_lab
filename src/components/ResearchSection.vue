@@ -30,47 +30,29 @@ import { ref } from 'vue'
 import geoAiImg from '../assets/GeoAI.jpg'
 import tourismImg from '../assets/TourismMobilityView.jpg'
 import smartCityImg from '../assets/SmartCity.jpg'
-import UrbanComputImg from '../assets/UrbanComputing.jpg'
-import humanImg from '../assets/human.jpg'
 import privacyImg from '../assets/Privacy.jpg'
 
 // 💡 僅將內容翻譯並更新為對應的英文學術介紹
 const researchDirections = ref([
   { 
     icon: geoAiImg, 
-    title: 'Geospatial Artificial Intelligence (GeoAI)', 
-    desc: 'Integrating deep learning algorithms with remote sensing imagery for intelligent target extraction, advanced change detection, and automatic object recognition.', 
-    url: '/research/geo-ai' 
+    title: 'GeoAI for object recognition and geospatial data analysis',
+    url:'/research/geo-ai'
   },
   { 
     icon: tourismImg, 
-    title: 'Smart Tourism and Mobility', 
-    desc: 'Leveraging multi-source spatiotemporal big data to analyze tourist movement behaviors, destination carrying capacity, and spatial equity in public transit.', 
+    title: 'Mobile mapping for autonomous driving and robotics', 
     url: '/research/tourism-mobility' 
   },
   { 
-    icon: UrbanComputImg, 
-    title: 'Urban Computing and Big Data', 
-    desc: 'Focusing on intelligent data analytics and developing international standards for spatial big data quality control to empower sustainable urban decision-making.', 
-    url: '/research/urban-computing' 
-  },
-  { 
     icon: smartCityImg, 
-    title: 'Smart City Planning & Digital Twins', 
-    desc: 'Utilizing high-density LiDAR point clouds for automated 3-D urban modeling and developing dynamic digital twins to optimize infrastructure distribution.', 
+    title: 'Urban informatics and smart cities', 
     url: '/research/smart-city-planning' 
   },
   { 
-    icon: humanImg, 
-    title: 'Human Behavior Analysis', 
-    desc: 'Modeling and predicting individual mobility patterns in complex urban spaces by pioneering spatiotemporal uncertainty theories and error ellipse trajectory corrections.', 
-    url: '/research/human-behavior' 
-  },
-  { 
     icon: privacyImg, 
-    title: 'Urban Privacy and Public Safety', 
-    desc: 'Balancing spatial location privacy preservation with real-time prediction and early warning systems for emerging pathogens to enhance spatiotemporal public health security.', 
-    url: '/research/urban-privacy' 
+    title: 'Intelligent analytics and quality control for spatial big data', 
+    url: '/research/urban-privacy'
   }
 ])
 </script>

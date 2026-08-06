@@ -3,13 +3,12 @@
     <router-link to="/" class="back-btn">← Back to Home</router-link>
 
     <section class="section">
-      <h2 class="section-title">Our Team</h2>
+      <h2 class="section-title">Director</h2>
       
-      <h3 class="sub-title">Director</h3>
       <div class="director-container">
         
         <div class="left-column">
-          <img :src="getStaffAvatar(director.avatarName)" alt="Director Photo" class="director-photo">
+          <img :src="directorImg" alt="Director Photo" class="director-photo">
           
           <div class="info-block">
             <h4 class="block-title">Education</h4>
@@ -35,7 +34,7 @@
 
           <div class="scholar-block">
             <a :href="director.scholarUrl" target="_blank" rel="noopener" class="scholar-link">
-              <img :src="getStaffAvatar('googlescholar.png')" alt="Google Scholar" class="scholar-icon">
+              <img :src=gg alt="Google Scholar" class="scholar-icon">
               <span>View Google Scholar Profile</span>
             </a>
           </div>
@@ -48,15 +47,17 @@
               </li>
             </ul>
           </div>
-        </div>
-      </div>
 
-      <h3 class="sub-title">Ph.D. Students</h3>
-      <div class="student-grid">
-        <div v-for="student in students" :key="student.name" class="student-card">
-          <img :src="getStaffAvatar(student.avatarName)" alt="Student Avatar" class="avatar-small">
-          <h4>{{ student.name }}</h4>
-          <p class="role">{{ student.role }}</p>
+          <!-- Selected Awards and Honors 板块 -->
+          <div class="info-block awards-block">
+            <h4 class="block-title">Selected Awards and Honors</h4>
+            <ul class="awards-list">
+              <li v-for="(award, index) in director.awards" :key="index">
+                {{ award }}
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
@@ -66,20 +67,22 @@
 
 <script setup>
 import { ref } from 'vue'
-
+import gg from '../assets/googlesc.png'
+// 假设当前 vue 文件在 src/components/，照片在 src/assets/focus/director.png
+import directorImg from '../assets/director.jpg'
 // 动态解析 assets/Staff/ 目录下图片的函数
 const getStaffAvatar = (name) => {
   return new URL(`../assets/Staff/${name}`, import.meta.url).href
 }
 
-// 1. 实验室负责人数据（已更新为施老师数据）
+// 1. 实验室负责人数据
 const director = ref({
   name: 'Prof. John W.Z. SHI',
   title: 'Chair Professor / Lab Director',
   avatarName: 'SHI Wen-Zhong.png', 
   scholarUrl: 'https://scholar.google.com/citations?user=3vQE5GYAAAAJ&hl=zh-CN&oi=ao',
   
-  bio: 'John W.Z. Shi is an Academician of the International Eurasian Academy of Sciences and Fellow of the Academy of Social Sciences (UK). His research focuses on urban informatics, smart cities, Geo‑AI, remote sensing, spatial big data quality control, mobile mapping and 3D modelling. He has published over 300 SCI papers, holds more than 60 patents, and has received the State Natural Science Award and multiple Gold Medals at the Geneva International Exhibition of Inventions.',
+  bio: 'Professor John Shi is Academician of International Eurasian Academy of Sciences and Fellow of Academy of Social Sciences (UK). He is a Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography, Fellow of isprs and Hong Kong Institute of Surveyors.is research covers urban informatics for smart cities, mobile mapping for autonomous driving and robotics, geographic information science and remote sensing, AI-based object extraction and change detection from satellite imagery, intelligent analytics and quality control for spatial big data. He has published over 350 research articles in journals indexed by Web of Science and 20 books. He is the world’s top 0.27% cited researcher in Geological & Geomatics Engineering according to Stanford World’s Top 2% Scientists. He has over 60 patents granted.',
   
   education: [
     { degree: 'B.Eng. in Aerial Photogrammetry', institution: 'Wuhan Technical University of Surveying and Mapping (now Wuhan University)', year: '1985' },
@@ -94,35 +97,36 @@ const director = ref({
     'Director, PolyU‑Wuhan University Joint Research Laboratory on Spatial Information',
     'President, International Society for Urban Informatics',
     'Editor‑in‑Chief, International Journal of Urban Informatics'
+  ],
+
+  awards: [
+    '2026 Professor Shi Wenzhong from The Hong Kong Polytechnic University has been elected as an ISPRS Fellow ',
+    '2025 Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography',
+    '2025 Geographic Information Science and Technology Progress Award',
+    '2024 HKIES Honorary Fellow',
+    '2024 Leading Figure in Smart Cities',
+    '2023 Gold Medal in 48th Geneva International Exhibition of Inventions, “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens”',
+    '2023 Gold Medal in Asian International Innovation Invention Award, “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens”',
+    '2022 Smart Living Partnership Awards 2022, “Outstanding One-stop Virus Decisions Support Platform”',
+    '2021 Fellow, Academy of Social Sciences (UK)',
+    '2021 CPGIS Distinguished Scholar Award',
+    '2021 Gold Medal in Geneva Inventions Expo, “Smart City Platform: A Comprehensive System for Spatial Data Infrastructure”',
+    '2020 Founder’s Award, International Spatial Accuracy Research Association',
+    '2019 Academician, International Eurasian Academy of Sciences',
+    '2019 Fellow, Hong Kong Institute of Surveyors',
+    '2018 Fellow, Royal Institution of Chartered Surveyors (UK)',
+    '2017 Science and Technology Progress Award in Surveying and Mapping (Grand Award), by Chinese Society for Surveying, Mapping and Geoinformation (as primary contributor)',
+    '2012 The Wang Zhizhuo Award, by International Society for Photogrammetry and Remote Sensing (one awardee every four years)',
+    '2011 Distinguished Alumna of Wuhan University',
+    '2008 Award of Innovative Publication Engineering, by General Administration of Press and Publication of China (as primary contributor)',
+    '2007 National Natural Science Award by the State Council of China (Second-class, as the primary contributor, the highest award in natural science in China)',
+    '2007 Progress Award in Science and Technology by Ministry of Education, China (First-class, as the third contributor)',
+    '2006 Award of Chang Jiang Scholars, Chair Professor, by Ministry of Education, China',
+    '2006 ESRI Award for Best Scientific Paper in GIS (First place), by American Society of Photogrammetry and Remote Sensing',
+    '2006 Distinguished Young Scholar Fund (B), by National Natural Science Foundation, China',
+    '07/98 The President’s Award for Outstanding Performance/Achievement (one of the three awardees selected from over 1000 faculty members)'
   ]
 })
-
-// 2. 博士生数据（完整保留您的 23 位同学数据）
-const students = ref([
-  { name: 'He LIU', role: 'Ph.D. Student', avatarName: 'Liuhe.png' },
-  { name: 'Yijia LIU', role: 'Ph.D. Student', avatarName: 'Liuyijia.png' },
-  { name: 'Shuyu ZHANG', role: 'Ph.D. Student', avatarName: 'Zhangshuyu.png' },
-  { name: 'Jiahui ZOU', role: 'Ph.D. Student', avatarName: 'Zoujiahui.png' },
-  { name: 'Yue XIA', role: 'Ph.D. Student', avatarName: 'Xiayue.png' },
-  { name: 'Fan SHI', role: 'Ph.D. Student', avatarName: 'Shifan.png' },
-  { name: 'Wenguang PENG', role: 'Ph.D. Student', avatarName: 'Pengguangwen.png' },
-  { name: 'Kexin TANG', role: 'Ph.D. Student', avatarName: 'Tangkexin.png' },
-  { name: 'Qiru ZHONG', role: 'Ph.D. Student', avatarName: 'Zhongqiru.png' },
-  { name: 'Huilin ZHAO', role: 'Ph.D. Student', avatarName: 'Zhaohuilin.png' },
-  { name: 'Chenrui BAI', role: 'Ph.D. Student', avatarName: 'Baicherui.png' },
-  { name: 'Zeyu PU', role: 'Ph.D. Student', avatarName: 'Puzeyu.png' },
-  { name: 'Yitao WEI', role: 'Ph.D. Student', avatarName: 'Weiyitao.png' },
-  { name: 'Anqi DAI', role: 'Ph.D. Student', avatarName: 'Daianqi.png' },
-  { name: 'Mingyan NIE', role: 'Ph.D. Student', avatarName: 'Niemingyan.png' },
-  { name: 'Fanxin ZENG', role: 'Ph.D. Student', avatarName: 'Zengfanxin.png' },
-  { name: 'Ge MU', role: 'Ph.D. Student', avatarName: 'Muge.png' },
-  { name: 'Shengyu LU', role: 'Ph.D. Student', avatarName: 'Lushengyu.png' },
-  { name: 'Linya PENG', role: 'Ph.D. Student', avatarName: 'Penglinya.png' },
-  { name: 'Jing YANG', role: 'Ph.D. Student', avatarName: 'Yangjing.png' },
-  { name: 'Daping YANG', role: 'Ph.D. Student', avatarName: 'Yangdaping.png' },
-  { name: 'Yuehuan LI', role: 'Ph.D. Student', avatarName: 'Liyuehuan.png' },
-  { name: 'Jiaxin LIU', role: 'Ph.D. Student', avatarName: 'Liujiaxin.png' }
-])
 </script>
 
 <style scoped>
@@ -161,16 +165,7 @@ const students = ref([
   margin-bottom: 10px; 
 }
 
-.sub-title { 
-  font-size: 1.7rem; 
-  color: #1e3a8a; 
-  margin-top: 40px; 
-  margin-bottom: 25px; 
-}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   施老师双栏主卡片样式
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* 施老师双栏主卡片样式 */
 .director-container {
   display: flex;
   gap: 50px;
@@ -192,7 +187,7 @@ const students = ref([
   gap: 30px;
 }
 
-/* 右侧栏：弹性自适应，承载名字、简介、链接、头衔 */
+/* 右侧栏：弹性自适应，承载名字、简介、链接、头衔、荣誉 */
 .right-column {
   flex: 1;
   display: flex;
@@ -200,12 +195,12 @@ const students = ref([
   gap: 25px;
 }
 
-/* 老师照片：保留原始尺寸比例，去除圆形强制裁剪 */
+/* 老师照片 */
 .director-photo {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px; /* 轻微圆角使之更现代温和 */
+  border-radius: 8px;
   border: 1px solid #cbd5e1;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
 }
@@ -271,7 +266,7 @@ const students = ref([
 }
 
 /* 教育背景列表 */
-.education-list, .positions-list {
+.education-list, .positions-list, .awards-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -310,65 +305,25 @@ const students = ref([
   top: -2px;
 }
 
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   3. 学生网格与卡片样式（保持原样）
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.student-grid { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 35px; 
+/* 🏆 荣誉奖项列表专属样式 */
+.awards-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  color: #334155;
+  font-size: 1.1rem;
+}
+.awards-list li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #d97706; /* 用一个金色/琥珀色的小星星突出荣誉 */
+  font-size: 0.9rem;
+  top: 1px;
 }
 
-.student-card { 
-  border: 1px solid #e2e8f0; 
-  padding: 35px 25px; 
-  border-radius: 14px; 
-  text-align: center; 
-  transition: all 0.3s ease; 
-  background: #ffffff; 
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05); 
-}
-
-.student-card:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 15px 25px -5px rgb(0 0 0 / 0.08); 
-  border-color: #0284c7; 
-}
-
-.avatar-small { 
-  width: 110px; 
-  height: 110px; 
-  border-radius: 50%; 
-  object-fit: cover; 
-  margin-bottom: 20px; 
-  border: 3px solid #e2e8f0; 
-}
-
-.student-card h4 { 
-  font-size: 1.4rem; 
-  margin: 0 0 8px 0; 
-  color: #0f172a; 
-}
-
-.student-card .role { 
-  font-size: 1.05rem; 
-  color: #64748b; 
-  margin-bottom: 0; 
-}
-
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   4. 响应式屏幕断点适配
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-@media (max-width: 1024px) {
-  .student-grid {
-    grid-template-columns: repeat(3, 1fr); 
-  }
-}
-
+/* 响应式屏幕断点适配 */
 @media (max-width: 900px) {
-  /* 导师双栏卡片在中小屏幕下转为垂直单栏流 */
   .director-container {
     flex-direction: column;
     padding: 30px;
@@ -385,18 +340,4 @@ const students = ref([
     width: 100%;
   }
 }
-
-@media (max-width: 768px) { 
-  .student-grid {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .student-grid {
-    grid-template-columns: 1fr; 
-  }
-}
 </style>
-

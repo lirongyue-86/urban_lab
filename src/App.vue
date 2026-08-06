@@ -2,12 +2,16 @@
   <div class="lab-site">
     <nav class="navbar">
       <div class="logo-container">
-        <span class="logo-text">Urban Information Science Lab</span>
-        <span class="logo-sub">Urban Information Science Lab</span>
+        <span class="logo-text">Lab of Urban Informatics</span>
+        <span class="logo-sub">Lab of Urban Informatics</span>
       </div>
+      
       <div class="nav-links">
         <router-link to="/" class="nav-item">Home</router-link>
-        <router-link to="/team" class="nav-item team-link">Research Team</router-link>
+        <router-link to="/team" class="nav-item team-link">Director</router-link>
+        <router-link to="/Pub" class="nav-item">Publications</router-link>
+        <router-link to="/book" class="nav-item">Books</router-link>
+        <router-link to="/opening" class="nav-item">Opening</router-link>
       </div>
     </nav>
 
@@ -16,7 +20,7 @@
     </main>
 
     <footer class="footer">
-      <p>© 2026 Urban Information Science Lab. All Rights Reserved.</p>
+      <p>© 2026 Lab of Urban Informatics . All Rights Reserved.</p>
     </footer>
   </div>
 </template>
@@ -26,7 +30,7 @@
 :global(body) { 
   margin: 0 !important; 
   padding: 0 !important; 
- /* 與 style.css 底層顏色一致 */
+  /* 與 style.css 底層顏色一致 */
   overflow-x: hidden; 
 }
 
@@ -48,20 +52,19 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 确保 logo 的文字上下排布，不会挤在同一行 */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
 .logo-text { color: #ffffff; font-size: 1.35rem; font-weight: bold; }
-.logo-sub { color: #38bdf8; font-size: 0.85rem; margin-top: 2px; }
+.logo-sub { color: #b17fc9; font-size: 0.85rem; margin-top: 2px; }
 
 .nav-item { 
   color: #cbd5e1; text-decoration: none; font-size: 1.1rem; 
   margin-left: 30px; font-weight: 500; transition: color 0.2s;
 }
 .nav-item:hover { color: #38bdf8; }
-
-.team-link {
-  border: 1.5px solid #0790cb; padding: 6px 16px; border-radius: 6px;
-  color: #38bdf8; transition: all 0.2s;
-}
-.team-link:hover { background-color: #38bdf8; color: #070d19; transform: scale(1.05); }
 
 /* 3. 關鍵修改：內容區改為「懸浮玻璃卡片」 */
 .content { 
