@@ -11,6 +11,7 @@ import UrbanPrivacyView from './components/IntelligentAnalytics.vue'
 import BookView from './components/book.vue'
 import PubView from './components/Pub.vue' // 💡 新增 Publications 頁面組件
 import OpeningView from  './components/Opening.vue' // 💡 新增 Opening 頁面組件
+import NewsView from './components/NewsView.vue'
 // import Geoai from './components/Geoai.vue'
 const routes = [
   { path: '/', component: HomeView },
@@ -18,6 +19,7 @@ const routes = [
   { path: '/book', component: BookView }, 
   { path: '/Pub', component: PubView }, // 💡 Publications 頁面路由
   {path: '/opening', component: OpeningView}, // 💡 Opening 頁面路由
+  { path: '/news', component: NewsView },
   // 🔄 6 個核心研究方向的獨立新網頁路由路徑
   { path: '/research/geo-ai', component: GeoAiView },
   { path: '/research/tourism-mobility', component: TourismMobilityView },

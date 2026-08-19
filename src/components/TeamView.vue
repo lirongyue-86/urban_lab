@@ -10,15 +10,6 @@
         <div class="left-column">
           <img :src="directorImg" alt="Director Photo" class="director-photo">
           
-          <div class="info-block">
-            <h4 class="block-title">Education</h4>
-            <ul class="education-list">
-              <li v-for="(edu, index) in director.education" :key="index">
-                <strong>{{ edu.degree }}</strong><br>
-                <span class="inst">{{ edu.institution }}</span>, <span class="year">{{ edu.year }}</span>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div class="right-column">
@@ -78,17 +69,11 @@ const getStaffAvatar = (name) => {
 // 1. 实验室负责人数据
 const director = ref({
   name: 'Prof. John W.Z. SHI',
-  title: 'Chair Professor / Lab Director',
+  title: 'DSci, AIEAS, FASS, FISPRS, FISUI, FCSGPC, FHKIS, DoFTRI, DoSCRI',
   avatarName: 'SHI Wen-Zhong.png', 
   scholarUrl: 'https://scholar.google.com/citations?user=3vQE5GYAAAAJ&hl=zh-CN&oi=ao',
   
-  bio: 'Professor John Shi is Academician of International Eurasian Academy of Sciences and Fellow of Academy of Social Sciences (UK). He is a Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography, Fellow of isprs and Hong Kong Institute of Surveyors.is research covers urban informatics for smart cities, mobile mapping for autonomous driving and robotics, geographic information science and remote sensing, AI-based object extraction and change detection from satellite imagery, intelligent analytics and quality control for spatial big data. He has published over 350 research articles in journals indexed by Web of Science and 20 books. He is the world’s top 0.27% cited researcher in Geological & Geomatics Engineering according to Stanford World’s Top 2% Scientists. He has over 60 patents granted.',
-  
-  education: [
-    { degree: 'B.Eng. in Aerial Photogrammetry', institution: 'Wuhan Technical University of Surveying and Mapping (now Wuhan University)', year: '1985' },
-    { degree: 'M.Eng. in Aerial Photogrammetry', institution: 'Wuhan Technical University of Surveying and Mapping (now Wuhan University)', year: '1988' },
-    { degree: 'Ph.D. in Geospatial Science', institution: 'University of Osnabrück (Vechta), Germany', year: '1994' }
-  ],
+  bio: 'Professor John W.Z. Shi is an Academician of the International Eurasian Academy of Sciences and a Fellow of the Academy of Social Sciences (UK), the Chinese Society for Geodesy, Photogrammetry and Cartography, ISPRS, and the Hong Kong Institute of Surveyors. His research covers urban informatics for smart cities, mobile mapping for autonomous driving and robotics, geographic information science and remote sensing, AI-based object extraction and change detection from satellite imagery, and intelligent analytics and quality control for spatial big data. He has published more than 350 research articles in Web of Science-indexed journals and 20 books. According to Stanford’s World’s Top 2% Scientists list, he ranks among the top 0.27% of cited researchers in Geological & Geomatics Engineering. He holds more than 60 granted patents.',
   
   positions: [
     'Director, PolyU‑Shenzhen Technology and Innovation Research Institute (Futian)',
@@ -100,31 +85,31 @@ const director = ref({
   ],
 
   awards: [
-    '2026 Professor Shi Wenzhong from The Hong Kong Polytechnic University has been elected as an ISPRS Fellow ',
-    '2025 Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography',
-    '2025 Geographic Information Science and Technology Progress Award',
-    '2024 HKIES Honorary Fellow',
-    '2024 Leading Figure in Smart Cities',
-    '2023 Gold Medal in 48th Geneva International Exhibition of Inventions, “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens”',
-    '2023 Gold Medal in Asian International Innovation Invention Award, “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens”',
-    '2022 Smart Living Partnership Awards 2022, “Outstanding One-stop Virus Decisions Support Platform”',
-    '2021 Fellow, Academy of Social Sciences (UK)',
-    '2021 CPGIS Distinguished Scholar Award',
-    '2021 Gold Medal in Geneva Inventions Expo, “Smart City Platform: A Comprehensive System for Spatial Data Infrastructure”',
-    '2020 Founder’s Award, International Spatial Accuracy Research Association',
-    '2019 Academician, International Eurasian Academy of Sciences',
-    '2019 Fellow, Hong Kong Institute of Surveyors',
-    '2018 Fellow, Royal Institution of Chartered Surveyors (UK)',
-    '2017 Science and Technology Progress Award in Surveying and Mapping (Grand Award), by Chinese Society for Surveying, Mapping and Geoinformation (as primary contributor)',
-    '2012 The Wang Zhizhuo Award, by International Society for Photogrammetry and Remote Sensing (one awardee every four years)',
-    '2011 Distinguished Alumna of Wuhan University',
-    '2008 Award of Innovative Publication Engineering, by General Administration of Press and Publication of China (as primary contributor)',
-    '2007 National Natural Science Award by the State Council of China (Second-class, as the primary contributor, the highest award in natural science in China)',
-    '2007 Progress Award in Science and Technology by Ministry of Education, China (First-class, as the third contributor)',
-    '2006 Award of Chang Jiang Scholars, Chair Professor, by Ministry of Education, China',
-    '2006 ESRI Award for Best Scientific Paper in GIS (First place), by American Society of Photogrammetry and Remote Sensing',
-    '2006 Distinguished Young Scholar Fund (B), by National Natural Science Foundation, China',
-    '07/98 The President’s Award for Outstanding Performance/Achievement (one of the three awardees selected from over 1000 faculty members)'
+    'In 2026, Professor Shi was elected a Fellow of ISPRS.',
+    'In 2025, Professor Shi was elected a Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography.',
+    'In 2025, Professor Shi received the Geographic Information Science and Technology Progress Award.',
+    'In 2024, Professor Shi was named an Honorary Fellow of HKIES.',
+    'In 2024, Professor Shi was recognised as a Leading Figure in Smart Cities.',
+    'In 2023, Professor Shi received a Gold Medal at the 48th Geneva International Exhibition of Inventions for “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens.”',
+    'In 2023, Professor Shi received a Gold Medal at the Asian International Innovation Invention Award for “Advanced Real-time Prediction and Early Warning System for the Spread of Emerging Pathogens.”',
+    'In 2022, Professor Shi received the Smart Living Partnership Awards recognition for the “Outstanding One-stop Virus Decisions Support Platform.”',
+    'In 2021, Professor Shi was elected a Fellow of the Academy of Social Sciences (UK).',
+    'In 2021, Professor Shi received the CPGIS Distinguished Scholar Award.',
+    'In 2021, Professor Shi received a Gold Medal at the Geneva Inventions Expo for “Smart City Platform: A Comprehensive System for Spatial Data Infrastructure.”',
+    'In 2020, Professor Shi received the Founder’s Award from the International Spatial Accuracy Research Association.',
+    'In 2019, Professor Shi was elected an Academician of the International Eurasian Academy of Sciences.',
+    'In 2019, Professor Shi was elected a Fellow of the Hong Kong Institute of Surveyors.',
+    'In 2018, Professor Shi was elected a Fellow of the Royal Institution of Chartered Surveyors (UK).',
+    'In 2017, Professor Shi received the Grand Award for Science and Technology Progress in Surveying and Mapping from the Chinese Society for Surveying, Mapping and Geoinformation as the primary contributor.',
+    'In 2012, Professor Shi received the Wang Zhizhuo Award from the International Society for Photogrammetry and Remote Sensing, an honour awarded once every four years.',
+    'In 2011, Professor Shi was named a Distinguished Alumnus of Wuhan University.',
+    'In 2008, Professor Shi received the Award of Innovative Publication Engineering from the General Administration of Press and Publication of China as the primary contributor.',
+    'In 2007, Professor Shi received the Second-class National Natural Science Award from the State Council of China as the primary contributor, the highest award in natural science in China.',
+    'In 2007, Professor Shi received the First-class Progress Award in Science and Technology from the Ministry of Education, China, as the third contributor.',
+    'In 2006, Professor Shi received the Chang Jiang Scholars Chair Professor Award from the Ministry of Education, China.',
+    'In 2006, Professor Shi received the First-place ESRI Award for Best Scientific Paper in GIS from the American Society of Photogrammetry and Remote Sensing.',
+    'In 2006, Professor Shi received the Distinguished Young Scholar Fund (B) from the National Natural Science Foundation of China.',
+    'In July 1998, Professor Shi received the President’s Award for Outstanding Performance/Achievement as one of three awardees selected from more than 1,000 faculty members.'
   ]
 })
 </script>
@@ -178,7 +163,7 @@ const director = ref({
   margin-bottom: 60px;
 }
 
-/* 左侧栏：固定宽度，承载照片和教育经历 */
+/* 左侧栏：固定宽度，承载照片 */
 .left-column {
   width: 320px;
   flex-shrink: 0;
@@ -265,28 +250,12 @@ const director = ref({
   object-fit: contain;
 }
 
-/* 教育背景列表 */
-.education-list, .positions-list, .awards-list {
+/* 任职头衔和荣誉列表 */
+.positions-list, .awards-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-.education-list li {
-  margin-bottom: 15px;
-  color: #475569;
-  font-size: 1.1rem;
-}
-.education-list li strong {
-  color: #0f172a;
-}
-.education-list .inst {
-  font-size: 1.05rem;
-}
-.education-list .year {
-  color: #64748b;
-  font-weight: 500;
-}
-
 /* 任职头衔列表 */
 .positions-list li {
   position: relative;
@@ -335,9 +304,6 @@ const director = ref({
   }
   .director-photo {
     max-width: 280px; 
-  }
-  .left-column .info-block {
-    width: 100%;
   }
 }
 </style>

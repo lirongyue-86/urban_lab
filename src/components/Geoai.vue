@@ -82,7 +82,7 @@
           <div class="card-glow" :style="pub.glowStyle"></div>
           <div class="pub-badge-top">
             <span class="journal-tag">{{ pub.journal }}</span>
-            <span class="if-tag">Impact Factor: {{ pub.impactFactor }}</span>
+            <span class="if-tag">Published: {{ pub.year }}</span>
           </div>
           <div class="card-content pub-content">
             <h3 class="pub-title">{{ pub.title }}</h3>
@@ -96,7 +96,7 @@
             </div>
 
             <div class="card-footer">
-              <span class="explore-link">View DOI / IEEE Xplore &rarr;</span>
+              <span class="explore-link">View Publication &rarr;</span>
             </div>
           </div>
         </div>
@@ -148,7 +148,8 @@ const achievements = reactive([
     tag: 'Urban Infrastructure',
     desc: 'Advanced computer vision framework for automated pavement distress identification and structural health monitoring of transportation networks.',
     image: roadImg,
-    link: '',
+    link: 'https://doi.org/10.1016/j.aei.2026.104427',
+    linkText: 'View Associated Paper',
     glowStyle: {}
   },
   {
@@ -174,10 +175,41 @@ const publications = reactive([
   {
     title: 'Landslide Recognition by Deep Convolutional Neural Network and Change Detection',
     journal: 'IEEE Transactions on Geoscience and Remote Sensing (TGRS)',
-    impactFactor: '5.855',
-    authors: 'Shi, W., Zhang, M.*, Ke, H., Fang, X., Zhan, Z. & Chen, S. (2020)',
-    desc: 'Proposes an innovative integrated framework combining deep convolutional neural networks and change detection technology for high-efficiency, high-accuracy landslide recognition in complex terrains.',
+    year: '2021',
+    authors: 'Shi, W., Zhang, M., Ke, H., Fang, X., Zhan, Z., & Chen, S.',
+    desc: 'Presents a CNN-and-change-detection framework for automated, high-speed landslide recognition and attribute extraction from remote-sensing imagery.',
     link: 'https://doi.org/10.1109/TGRS.2020.3015826',
+    badges: ['Remote Sensing', 'CNN', 'Change Detection'],
+    glowStyle: {}
+  },
+  {
+    title: 'CrackDualMamba: A Lightweight Dual-stream Mamba with Novel Focal Dice Balanced Loss for Vehicle-based Road Crack Segmentation',
+    journal: 'Advanced Engineering Informatics',
+    year: '2026',
+    authors: 'Bai, C., Shi, W., Zhang, M., & Zhao, H.',
+    desc: 'Introduces a lightweight dual-stream network for detailed road-crack segmentation in challenging vehicle-based imagery, combining local detail awareness with global context modelling.',
+    link: 'https://doi.org/10.1016/j.aei.2026.104427',
+    badges: ['Road Infrastructure', 'Vision Mamba', 'Crack Segmentation'],
+    glowStyle: {}
+  },
+  {
+    title: 'PolyU-BPCoMa: A Dataset and Benchmark Towards Mobile Colorized Mapping Using a Backpack Multisensorial System',
+    journal: 'International Journal of Applied Earth Observation and Geoinformation',
+    year: '2022',
+    authors: 'Shi, W., Chen, P., Wang, M., Bao, S., Xiang, H., Yu, Y., & Yang, D.',
+    desc: 'Documents an approximately 800 GB benchmark dataset for mobile colorized mapping, combining 3D LiDAR, spherical imagery, GNSS and IMU across indoor and outdoor environments.',
+    link: 'https://doi.org/10.1016/j.jag.2022.102962',
+    badges: ['Mobile Mapping', 'Multisensor Dataset', 'Colorized Point Clouds'],
+    glowStyle: {}
+  },
+  {
+    title: 'CGSANet: A Contour-Guided and Local Structure-Aware Encoder–Decoder Network for Accurate Building Extraction from Very High-Resolution Remote Sensing Imagery',
+    journal: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing',
+    year: '2021',
+    authors: 'Chen, S., Shi, W., Zhou, M., Zhang, M., & Xuan, Z.',
+    desc: 'Proposes a contour-guided and multiregion-guided network for accurate building extraction, with strong results on the WHU and NZ32km² building datasets.',
+    link: 'https://doi.org/10.1109/JSTARS.2021.3139017',
+    badges: ['Building Extraction', 'VHR Imagery', 'Deep Learning'],
     glowStyle: {}
   }
 ])

@@ -52,7 +52,6 @@ const systems = reactive([
     tag: 'Automotive',
     desc: 'Fast 3D scanning and high-precision mapping for large-scale urban environments.',
     image: vieImg,
-    link: 'https://smartspacetech.com.hk',
     glowStyle: {}
   },
   {

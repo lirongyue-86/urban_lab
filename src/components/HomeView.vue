@@ -1,14 +1,7 @@
 <template>
   <div class="hero-full-width">
     <section id="home" class="hero-section">
-      <h1>Welcome to the Lab of Urban Informatics</h1>
-      <p class="subtitle"> Smart Cities Research Institute</p>
-      <p class="description">
-        We aims at being a global centre of excellence in urban
-         informatics and a living laboratory of smart city development 
-         for Hong Kong and the Guangdong-Hong Kong-Macao Greater Bay Area.
-
-      </p>
+      <h1>Welcome to Urban Informatics Lab</h1>
     </section>
 
     <div class="scroll-indicator" @click="scrollToResearch">

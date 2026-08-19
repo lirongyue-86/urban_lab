@@ -2,8 +2,8 @@
   <div class="lab-site">
     <nav class="navbar">
       <div class="logo-container">
-        <span class="logo-text">Lab of Urban Informatics</span>
-        <span class="logo-sub">Lab of Urban Informatics</span>
+        <span class="logo-text">Urban Informatics Lab</span>
+        <span class="logo-sub">Urban Informatics Lab</span>
       </div>
       
       <div class="nav-links">
@@ -11,7 +11,8 @@
         <router-link to="/team" class="nav-item team-link">Director</router-link>
         <router-link to="/Pub" class="nav-item">Publications</router-link>
         <router-link to="/book" class="nav-item">Books</router-link>
-        <router-link to="/opening" class="nav-item">Opening</router-link>
+        <router-link to="/opening" class="nav-item">Join Us</router-link>
+        <router-link to="/news" class="nav-item">News</router-link>
       </div>
     </nav>
 
@@ -20,7 +21,7 @@
     </main>
 
     <footer class="footer">
-      <p>© 2026 Lab of Urban Informatics . All Rights Reserved.</p>
+      <p>© 2026 Urban Informatics Lab. All Rights Reserved.</p>
     </footer>
   </div>
 </template>

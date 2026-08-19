@@ -2,13 +2,12 @@
   <div class="join-container">
     <!-- 头部横幅与愿景 -->
     <div class="join-header">
-      <h2>Open Positions</h2>
-      <p class="subtitle">Join Our Research Group & Shape the Future Together</p>
-      <div class="header-line"></div>
-      <p class="join-intro">
-        We are constantly seeking self-motivated, talented, and creative individuals to join our team. 
-        If you are passionate about pushing the boundaries of scientific research, explore our open positions below.For details, please contact Professor Shi Wenzhong via email.
+      <h2>Join Us</h2>
+      <p class="contact-email">
+        For enquiries, please contact Professor John W.Z. Shi at
+        <a href="mailto:john.wz.shi@polyu.edu.hk">john.wz.shi@polyu.edu.hk</a>.
       </p>
+      <div class="header-line"></div>
     </div>
 
     <!-- 职位列表区域 -->
@@ -21,7 +20,7 @@
           <h3>Research Assistant Professor</h3>
         </div>
         <p class="position-desc">
-          We invite applications for the position of Research Assistant Professor. Candidates should have a strong track record of high-impact publications and the potential to secure external competitive research grants.For details, please contact Professor Shi Wenzhong via email.
+          We invite applications for the position of Research Assistant Professor. Candidates should have a strong record of high-impact publications and the potential to secure competitive external research grants.
         </p>
         <div class="action-row">
         </div>
@@ -50,7 +49,7 @@
       <div class="position-card">
         <div class="position-title-row">
           <span class="position-number">03</span>
-          <h3>PhD Studentships</h3>
+          <h3>PhD Students</h3>
         </div>
         <p class="position-desc">
           Several PhD positions are available for students with strong backgrounds in related disciplines. Excellent candidates will be nominated for highly competitive fellowships:
@@ -72,10 +71,10 @@
       <div class="position-card program-card">
         <div class="position-title-row">
           <span class="position-number">04</span>
-          <h3>Master's Programs</h3>
+          <h3>Master's Students</h3>
         </div>
         <p class="position-desc">
-          We welcome applications from motivated students intending to pursue Master's degrees by research or coursework. Discover our comprehensive curriculum and career tracks.
+          We welcome motivated students who wish to pursue a master's degree by research or coursework. Explore our curriculum and career pathways.
         </p>
         <div class="action-row">
           <a href="https://www.polyu.edu.hk/study/" target="_blank" rel="noopener noreferrer" class="details-link">
@@ -88,7 +87,7 @@
       <div class="position-card program-card">
         <div class="position-title-row">
           <span class="position-number">05</span>
-          <h3>Bachelor's Programs & Internships</h3>
+          <h3>Undergraduate Students & Internships</h3>
         </div>
         <p class="position-desc">
           We offer research internship opportunities and final year projects (FYP) for high-caliber undergraduate students. Get hands-on research experience in a world-class laboratory environment.
@@ -137,12 +136,15 @@ export default {
   letter-spacing: -0.5px;
 }
 
-.join-header .subtitle {
-  font-size: 16px;
-  color: #718096;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+.contact-email {
+  margin: 0 0 8px;
+  color: #4a5568;
+  font-size: 15px;
+}
+
+.contact-email a {
+  color: #8c071e;
+  font-weight: 600;
 }
 
 .header-line {
@@ -151,14 +153,6 @@ export default {
   background: #8c071e; /* 香港理大标志性暗红色/酒红 */
   margin: 20px auto;
   border-radius: 2px;
-}
-
-.join-intro {
-  max-width: 750px;
-  margin: 0 auto;
-  font-size: 15px;
-  color: #4a5568;
-  text-align: center;
 }
 
 /* 职位卡片列表 */

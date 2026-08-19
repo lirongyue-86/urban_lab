@@ -10,35 +10,11 @@
       </header>
 
       <div class="book-layout">
-        <aside class="timeline-nav">
-          <div class="timeline-sticky">
-            <p class="timeline-nav-title">Timeline</p>
-            <div class="timeline-buttons">
-              <button 
-                @click="scrollToSection('all')" 
-                :class="['timeline-btn', { active: activeSection === 'all' }]"
-              >
-                All Years
-              </button>
-              <button 
-                v-for="year in uniqueYears" 
-                :key="year"
-                @click="scrollToSection(year)"
-                :class="['timeline-btn', { active: activeSection === year }]"
-              >
-                {{ year }}
-              </button>
-            </div>
-          </div>
-        </aside>
-
         <main class="book-list-wrapper">
           <div class="book-list">
             <div 
               v-for="book in orderedBooks" 
               :key="book.id" 
-              :id="'book-node-' + book.id"
-              :data-year="book.year"
               class="book-card-with-img"
             >
               
@@ -77,51 +53,19 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 
 // 导入刚刚整理干净的无重复数据文件
 import { shiBooks } from './Monographs.js'
 
-// 用来控制高亮的响应式变量
-const activeSection = ref('all')
-
-// 严格按照 JS 文件里的原始 id 顺序渲染（剔除了 0，从 1 到 17）
+// 按出版年份从最新到最早显示；同年出版物按原始编号排序。
 const orderedBooks = computed(() => {
-  return [...shiBooks].sort((a, b) => a.id - b.id)
-})
-
-// 提取独一无二的年份（降序排列，供左侧时间轴使用）
-const uniqueYears = computed(() => {
-  const years = shiBooks.map(item => item.year)
-  return [...new Set(years)].sort((a, b) => b - a)
+  return [...shiBooks].sort((a, b) => b.year - a.year || a.id - b.id)
 })
 
 // 漏填或加载失败时的图片兜底机制（保持原样）
 const handleImageError = (e) => {
   e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="200" viewBox="0 0 140 200"><rect width="140" height="200" fill="%23f1f5f9"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%2394a3b8">No Cover</text></svg>'
-}
-
-// 更加精准的滚动定位逻辑：解决一年有多本书时的锚点冲突
-const scrollToSection = (year) => {
-  activeSection.value = year
-  if (year === 'all') {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  } else {
-    // 在 DOM 中找到该年份的第一本书
-    const element = document.querySelector(`[data-year="${year}"]`)
-    if (element) {
-      const offset = 40; 
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
-    }
-  }
 }
 
 // 出版社颜色标签分类样式（保持原样）
@@ -145,16 +89,16 @@ const getPublisherClass = (publisher) => {
   background-size: 24px 24px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #334155;
-  padding: 40px 20px;
+  padding: 48px 20px 64px;
 }
 
 .book-wrap {
-  max-w: 1150px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
 .book-header {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 24px;
@@ -188,62 +132,7 @@ const getPublisherClass = (publisher) => {
 }
 
 .book-layout {
-  display: flex;
-  gap: 40px;
   position: relative;
-}
-
-.timeline-nav {
-  width: 180px;
-  flex-shrink: 0;
-}
-
-.timeline-sticky {
-  position: sticky;
-  top: 40px;
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.timeline-nav-title {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #94a3b8;
-  margin: 0 0 12px 0;
-  letter-spacing: 1px;
-}
-
-.timeline-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.timeline-btn {
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #64748b;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.timeline-btn:hover {
-  background-color: #f1f5f9;
-  color: #1e293b;
-}
-
-.timeline-btn.active {
-  background-color: #2563eb;
-  color: #ffffff;
 }
 
 .book-list-wrapper {
@@ -253,20 +142,20 @@ const getPublisherClass = (publisher) => {
 .book-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .book-card-with-img {
   position: relative;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 26px;
+  border-radius: 16px;
+  padding: 22px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   display: flex;
-  gap: 28px;
+  gap: 24px;
   align-items: flex-start;
 }
 
@@ -277,7 +166,7 @@ const getPublisherClass = (publisher) => {
 }
 
 .book-cover-wrap {
-  width: 140px;          
+  width: 120px;
   flex-shrink: 0;          
   border-radius: 10px;
   overflow: hidden;
@@ -306,7 +195,7 @@ const getPublisherClass = (publisher) => {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   align-items: center;
 }
 
@@ -343,19 +232,19 @@ const getPublisherClass = (publisher) => {
 .pub-default { background-color: #f8fafc; color: #64748b; border-color: #e2e8f0; }
 
 .book-card-title {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
   line-height: 1.3;
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
 }
 
 .book-description {
-  font-size: 14.5px;
+  font-size: 14px;
   color: #475569;
   line-height: 1.65;
   background: #f8fafc;
-  padding: 16px 20px;
+  padding: 14px 16px;
   border-radius: 12px;
   border-left: 4px solid #cbd5e1;
 }
@@ -365,17 +254,15 @@ const getPublisherClass = (publisher) => {
 }
 
 @media (max-width: 768px) {
-  .book-layout { flex-direction: column; gap: 20px; }
-  .timeline-nav { width: 100%; }
-  .timeline-sticky { position: relative; top: 0; }
-  .timeline-buttons { flex-direction: row; overflow-x: auto; padding-bottom: 8px; white-space: nowrap; }
+  .book-container { padding: 32px 16px 48px; }
+  .book-header { margin-bottom: 28px; }
   
   .book-card-with-img {
     flex-direction: column; 
     align-items: center;
     gap: 20px;
   }
-  .book-cover-wrap { width: 150px; }
+  .book-cover-wrap { width: 140px; }
   .book-card-title { font-size: 20px; text-align: center; }
   .book-meta { justify-content: center; }
   .book-title { font-size: 32px; }

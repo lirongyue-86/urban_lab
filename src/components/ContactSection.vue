@@ -14,9 +14,9 @@
       </div>
 
       <div class="contact-info">
-        <p><strong>📍 Address:</strong> 181 Chatham Road South, Hung Hom, Kowloon, Hong Kong</p>
-        <p><strong>🏢 Institution:</strong> Department of Land Surveying and Geo-Informatics, The Hong Kong Polytechnic University</p>
-        <p><strong>📬 Postal Code:</strong> 999077</p>
+        <p><strong>📍 Address:</strong> ZS1010, Department of Land Surveying and Geospatial Science, The Hong Kong Polytechnic University, 181 Chatham Road South, Hung Hom, Kowloon, Hong Kong</p>
+        <p><strong>🏢 Institution:</strong> Smart City Research Institute, Department of Land Surveying and Geospatial Science, The Hong Kong Polytechnic University</p>
+        <p><strong>✉️ Email:</strong> <a href="mailto:john.wz.shi@polyu.edu.hk">john.wz.shi@polyu.edu.hk</a></p>
       </div>
 
     </div>

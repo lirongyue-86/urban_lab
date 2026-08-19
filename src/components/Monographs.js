@@ -15,13 +15,14 @@ import book10 from '../assets/books/monograph/book_10.png'
 import book11 from '../assets/books/monograph/book_11.png'
 import book12 from '../assets/books/monograph/book_12.png'
 
-// --- 编著图片导入（共 6 张，edit06 对应 Urban Informatics 封面） ---
+// --- 编著图片导入（共 7 张，edit06 为英文版、edit07 为中文版 Urban Informatics） ---
 import book13 from '../assets/books/edit/edit_01.png'
 import book14 from '../assets/books/edit/edit_02.png'
 import book15 from '../assets/books/edit/edit_03.png'
 import book16 from '../assets/books/edit/edit_04.png'
 import book17 from '../assets/books/edit/edit_05.png'
 import book18 from '../assets/books/edit/edit_06.png' 
+import book19 from '../assets/books/edit/edit_07.jpg'
 
 
 // ==========================================
@@ -104,15 +105,6 @@ export const shiBooks = [
     description: "Systematically explores error sources, statistical tests, digitization accuracy, adjustment models, uncertainty modeling, and quality control/sampling inspection methods for spatial data in Geographic Information Systems (GIS)."
   },
   {
-    id: 9,
-    type: "monograph",
-    year: 2005,
-    title: "Principles of Uncertainty in Spatial Data and Spatial Analysis",
-    publisher: "Science Press",
-    image: book04,
-    description: "A profound investigation into error propagation algorithms, error matrices, and spatial correlation analysis. It sets standard validation protocols for international spatial database development."
-  },
-  {
     id: 10,
     type: "monograph",
     year: 2003,
@@ -134,6 +126,15 @@ export const shiBooks = [
   // ==========================================
   // 【编著 (Edited Books)】类型统一为 "edit"
   // ==========================================
+  {
+    id: 18,
+    type: "edit",
+    year: 2024,
+    title: "城市信息学",
+    publisher: "Science Press",
+    image: book19,
+    description: "The Chinese edition of Urban Informatics, edited by Wenzhong Shi, Michael Goodchild, Michael Batty, Mei-Po Kwan, and An Zhang, with translation by Fanxin Zeng and Ye L\u00fc. Published by Science Press in 2024, this 569-page volume presents urban science, sensing, data infrastructure, urban computing, applications, and future directions for urban informatics."
+  },
   {
     id: 12,
     type: "edit",
