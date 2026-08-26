@@ -4,10 +4,8 @@
       
       <div v-if="currentView === 'years'" class="animate-fadeIn">
         <header class="pub-header">
-          <h1 class="pub-title">Selected Publications</h1>
-          <p class="pub-subtitle">
-
-          </p>
+          <h1 class="pub-title">Representative Papers</h1>
+          <p class="pub-subtitle">{{ publicationCount }} representative papers, organised by publication year.</p>
         </header>
 
         <div class="year-grid">
@@ -18,6 +16,7 @@
             class="year-card"
           >
             <span class="year-num">{{ year }}</span>
+            <span class="year-count">{{ publicationCountByYear[year] }} {{ publicationCountByYear[year] === 1 ? 'paper' : 'papers' }}</span>
             <span class="arrow-icon">→</span>
           </button>
         </div>
@@ -29,7 +28,7 @@
             <span class="back-arrow">←</span> Back to Years
           </button>
           <h2 class="detail-title">
-            Published Papers in <span class="year-highlight">{{ selectedYear }}</span>
+            Representative Papers in <span class="year-highlight">{{ selectedYear }}</span>
           </h2>
         </div>
 
@@ -39,31 +38,8 @@
             :key="index"
             class="paper-item"
           >
-            <div class="tags-row">
-              <span v-if="paper.impactFactor" class="if-tag">
-                IF: {{ paper.impactFactor }}
-              </span>
-              <span class="journal-tag">
-                {{ paper.journal }}
-              </span>
-            </div>
-
-            <h3 class="paper-title">{{ paper.title }}</h3>
-            <p class="paper-authors">{{ paper.authors }}</p>
-
-            <div class="paper-footer">
-              <a 
-                v-if="paper.doi" 
-                :href="paper.doi" 
-                target="_blank"
-                class="pub-site-link"
-              >
-                Publisher Site <span class="link-arrow">↗</span>
-              </a>
-              <span v-else class="indexed-tag">
-                🔒 Indexed Document
-              </span>
-            </div>
+            <span class="paper-index">{{ String(index + 1).padStart(2, '0') }}</span>
+            <p class="paper-citation">{{ paper.citation }}</p>
           </div>
         </div>
       </div>
@@ -78,6 +54,7 @@ import { ref, computed } from 'vue'
 // 导入论文数据
 import { shiPublicationsEn } from './PubData.js'
 const publicationsData = shiPublicationsEn;
+const publicationCount = publicationsData.length
 
 const currentView = ref('years')
 const selectedYear = ref('')
@@ -90,6 +67,11 @@ const uniqueYears = computed(() => {
   })
   return [...new Set(years)].sort((a, b) => b - a)
 })
+
+const publicationCountByYear = computed(() => publicationsData.reduce((counts, item) => {
+  counts[item.year] = (counts[item.year] || 0) + 1
+  return counts
+}, {}))
 
 const filteredPublications = computed(() => {
   if (!selectedYear.value) return []
@@ -184,6 +166,14 @@ const backToYears = () => {
   transition: color 0.3s;
 }
 
+.year-count {
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .year-card:hover .year-num {
   color: #2563eb;
 }
@@ -273,11 +263,28 @@ const backToYears = () => {
 .paper-item {
   position: relative;
   background: #ffffff;
-  padding: 24px 30px;
+  padding: 24px 30px 24px 76px;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   transition: all 0.3s;
+}
+
+.paper-index {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.paper-citation {
+  margin: 0;
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .paper-item:hover {

@@ -3,6 +3,9 @@
     <!-- 头部横幅与愿景 -->
     <div class="join-header">
       <h2>Join Us</h2>
+      <p class="research-directions">
+        <strong>Research directions:</strong> urban informatics and smart cities, geospatial artificial intelligence, mobile mapping and 3D spatial data, remote sensing and change detection, and spatiotemporal data analytics.
+      </p>
       <p class="contact-email">
         For enquiries, please contact Professor John W.Z. Shi at
         <a href="mailto:john.wz.shi@polyu.edu.hk">john.wz.shi@polyu.edu.hk</a>.
@@ -140,6 +143,17 @@ export default {
   margin: 0 0 8px;
   color: #4a5568;
   font-size: 15px;
+}
+
+.research-directions {
+  max-width: 760px;
+  margin: 0 auto 10px;
+  color: #4a5568;
+  font-size: 15px;
+}
+
+.research-directions strong {
+  color: #1a365d;
 }
 
 .contact-email a {
