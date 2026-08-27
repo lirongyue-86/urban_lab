@@ -73,7 +73,7 @@ const director = ref({
   avatarName: 'SHI Wen-Zhong.png', 
   scholarUrl: 'https://scholar.google.com/citations?user=3vQE5GYAAAAJ&hl=zh-CN&oi=ao',
   
-  bio: 'Professor John W.Z. Shi is an Academician of the International Eurasian Academy of Sciences and a Fellow of the Academy of Social Sciences (UK), the Chinese Society for Geodesy, Photogrammetry and Cartography, ISPRS, and the Hong Kong Institute of Surveyors. His research covers urban informatics for smart cities, mobile mapping for autonomous driving and robotics, geographic information science and remote sensing, AI-based object extraction and change detection from satellite imagery, and intelligent analytics and quality control for spatial big data. He has published more than 350 research articles in Web of Science-indexed journals and 20 books. According to Stanford’s World’s Top 2% Scientists list, he ranks among the top 0.27% of cited researchers in Geological & Geomatics Engineering. He holds more than 60 granted patents.',
+  bio: 'Professor John W.Z. Shi is an Academician of the International Eurasian Academy of Sciences and a Fellow of the Academy of Social Sciences (UK), the Chinese Society for Geodesy, Photogrammetry and Cartography, International Society for Photogrammetry and Remote Sensing, and the Hong Kong Institute of Surveyors. His research covers urban informatics for smart cities,geographic information science and remote sensing, mobile mapping for autonomous driving and robotics,  AI-based object recognition and change detection from satellite imagery, and intelligent analytics modeling and quality control for spatial big data. He has published more than 350 research articles in Web of Science-indexed journals and 20 books. According to Stanford’s World’s Top 2% Scientists list, he ranks among the top 0.27% of cited researchers in Geological & Geomatics Engineering. He holds more than 70 granted patents.',
   
   positions: [
     'Director, PolyU‑Shenzhen Technology and Innovation Research Institute (Futian)',
@@ -85,7 +85,7 @@ const director = ref({
   ],
 
   awards: [
-    '2026 — Fellow of ISPRS.',
+    '2026 — Fellow of International Society for Photogrammetry and Remote Sensing.',
     '2025 — Fellow of the Chinese Society for Geodesy, Photogrammetry and Cartography.',
     '2025 — Geographic Information Science and Technology Progress Award (Grand Prize), awarded by the China Geographic Information Industry Association.',
     '2025 — Springer Nature Editorial Contribution Award, awarded by Springer Nature for service as Editor-in-Chief of Urban Informatics.',
