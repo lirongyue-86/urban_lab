@@ -72,4 +72,21 @@ const scrollToResearch = () => {
 .description { font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; }
 .main-content { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 .divider { border: 0; height: 1px; background: #e2e8f0; margin: 60px auto; }
+
+@media (max-width: 768px) {
+  .hero-full-width {
+    min-height: 70vh;
+    padding: 100px 20px;
+    background-attachment: scroll;
+  }
+
+  .hero-section h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+  }
+
+  .scroll-indicator { bottom: 24px; }
+  .main-content { padding: 0 16px; }
+  .divider { margin: 36px auto; }
+}
 </style>

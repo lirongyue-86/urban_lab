@@ -375,6 +375,22 @@ const backToYears = () => {
   font-style: italic;
 }
 
+@media (max-width: 768px) {
+  .pub-container { padding: 28px 16px; }
+  .pub-header { margin-bottom: 28px; padding-bottom: 18px; }
+  .pub-title { font-size: 32px; }
+  .pub-subtitle { font-size: 14px; }
+  .year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .year-card { padding: 24px 12px; border-radius: 12px; }
+  .year-num { font-size: 25px; }
+  .detail-header { align-items: flex-start; margin-bottom: 24px; }
+  .detail-title { font-size: 21px; }
+  .paper-list { gap: 14px; }
+  .paper-item { padding: 48px 18px 20px; border-radius: 12px; }
+  .paper-index { top: 18px; left: 18px; }
+  .paper-citation { font-size: 15px; line-height: 1.65; }
+}
+
 /* 动效 */
 .animate-fadeIn {
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);

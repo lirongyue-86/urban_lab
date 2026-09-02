@@ -336,4 +336,15 @@ const director = ref({
     max-width: 280px; 
   }
 }
+
+@media (max-width: 600px) {
+  .team-page { padding: 24px 16px; font-size: 1rem; line-height: 1.65; }
+  .section-title { font-size: 2rem; padding-left: 12px; border-left-width: 4px; }
+  .director-container { padding: 22px; gap: 26px; margin-bottom: 34px; }
+  .director-meta h3 { font-size: 1.8rem; }
+  .director-meta .title { font-size: 1rem; overflow-wrap: anywhere; }
+  .bio-text, .positions-list li, .awards-list li { font-size: 1rem; }
+  .scholar-link { font-size: 0.95rem; padding: 8px 12px; }
+  .info-block .block-title { font-size: 1.25rem; }
+}
 </style>

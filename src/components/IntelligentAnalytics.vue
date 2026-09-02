@@ -348,4 +348,15 @@ import imgPan from '../assets/focus/pan.jpg'
 .platform-showcase-box {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .intelligent-analytics-page { padding: 36px 16px 60px; }
+  .header-section { margin-bottom: 36px; }
+  .title { font-size: 2rem; line-height: 1.2; }
+  .subtitle { font-size: 1rem; line-height: 1.6; }
+  .card-section { padding: 20px; margin-bottom: 24px; }
+  .book-grid, .software-showcase { grid-template-columns: 1fr; gap: 20px; }
+  .breakthrough-banner { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .awards-grid, .standards-grid, .achievements-subgrid { grid-template-columns: 1fr; }
+}
 </style>

@@ -544,4 +544,16 @@ const handleMouseLeave = (index) => {
 .card:hover .explore-link {
   color: #7dd3fc;
 }
+
+@media (max-width: 768px) {
+  .academic-container { padding: 36px 16px; }
+  .header { margin-bottom: 30px; }
+  .main-title { font-size: 2rem; line-height: 1.2; }
+  .tab-navigation { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; }
+  .tab-btn { flex: 1 1 140px; justify-content: center; padding: 9px 12px; }
+  .showcase-grid { grid-template-columns: 1fr; gap: 18px; }
+  .image-wrapper { height: 180px; }
+  .card-content { padding: 18px; }
+  .pub-badge-top { align-items: flex-start; gap: 8px; padding: 14px 18px 0; }
+}
 </style>

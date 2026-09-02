@@ -297,4 +297,13 @@ const handleMouseLeave = (index) => {
 .card:hover .explore-link {
   color: #7dd3fc;
 }
+
+@media (max-width: 768px) {
+  .academic-container { padding: 36px 16px; }
+  .header { margin-bottom: 32px; }
+  .main-title { font-size: 2rem; line-height: 1.2; }
+  .showcase-grid { grid-template-columns: 1fr; gap: 18px; }
+  .image-wrapper { height: 175px; }
+  .card-content { padding: 18px; }
+}
 </style>

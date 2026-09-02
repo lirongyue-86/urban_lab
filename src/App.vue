@@ -84,4 +84,34 @@
   color: #eaf3ff; text-align: center; padding: 50px 0; 
   margin-top: 0px; font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .logo-text { font-size: 1.15rem; }
+  .logo-sub { display: none; }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    padding: 6px 4px;
+    font-size: 0.93rem;
+  }
+
+  .footer {
+    padding: 28px 16px;
+    font-size: 0.88rem;
+  }
+}
 </style>
