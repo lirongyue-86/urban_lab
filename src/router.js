@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from './components/HomeView.vue'
 import TeamView from './components/TeamView.vue'
 
@@ -14,11 +14,7 @@ import OpeningView from  './components/Opening.vue' // 💡 新增 Opening 頁�
 import NewsView from './components/NewsView.vue'
 // import Geoai from './components/Geoai.vue'
 const routes = [
-  {
-    path: '/',
-    component: HomeView,
-    beforeEnter: (to) => to.query.page === 'director' ? { path: '/team' } : true
-  },
+  { path: '/', component: HomeView },
   { path: '/team', component: TeamView },
   { path: '/book', component: BookView }, 
   { path: '/Pub', component: PubView }, // 💡 Publications 頁面路由
@@ -32,7 +28,9 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  // Hash routes allow each page to be opened directly even when the server
+  // has no SPA fallback configuration (e.g. https://.../#/team).
+  history: createWebHashHistory(),
   routes,
   // 確保點擊跳轉時，畫面會自動回到網頁最頂端
   scrollBehavior(to, from, savedPosition) {
