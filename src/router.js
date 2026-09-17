@@ -14,7 +14,11 @@ import OpeningView from  './components/Opening.vue' // 💡 新增 Opening 頁�
 import NewsView from './components/NewsView.vue'
 // import Geoai from './components/Geoai.vue'
 const routes = [
-  { path: '/', component: HomeView },
+  {
+    path: '/',
+    component: HomeView,
+    beforeEnter: (to) => to.query.page === 'director' ? { path: '/team' } : true
+  },
   { path: '/team', component: TeamView },
   { path: '/book', component: BookView }, 
   { path: '/Pub', component: PubView }, // 💡 Publications 頁面路由
